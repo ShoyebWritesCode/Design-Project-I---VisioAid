@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:object_detection/HomeScreen.dart';
+//import 'package:object_detection/HomeScreen.dart';
 import 'package:object_detection/splash.dart';
 
 void main() {
