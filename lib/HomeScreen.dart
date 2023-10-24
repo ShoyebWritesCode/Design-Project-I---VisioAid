@@ -206,6 +206,62 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }
                                 },
                               ),
+                              IconButton(
+                                  icon: const ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      Colors.black, // Set the desired color
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Icon(Icons
+                                        .translate), // Use Icons.translate to represent translation
+                                  ),
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Bangla Translation',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          content: const Text(
+                                            'BOLBONA',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          // Add your translated text here
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                          'Close',
+                                          style: TextStyle(
+                                            fontFamily: 'Sora',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                            height: 1.26,
+                                            color: Color(0xff005aee),
+                                          ),
+                                        ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }),
                             ],
                           ),
                           children: [
@@ -466,19 +522,32 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: Container(
-        width: double.infinity,
+        width: double.infinity, // Set your desired width
+        height: 56, // Set your desired height
         margin: EdgeInsets.only(left: 24, right: 24, bottom: 24),
-        child: FloatingActionButton.extended(
-          onPressed: _showBottomSheet,
-          backgroundColor: Color(0xff005aee),
-          label: Text(
-            'Show Result',
-            style: TextStyle(
-              fontSize: 18,
-              fontFamily: 'Sora',
-              fontWeight: FontWeight.w500,
-              height: 1.26,
-              color: Colors.white,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          // Add your desired border radius
+          child: FloatingActionButton.extended(
+            onPressed: _showBottomSheet,
+            backgroundColor: Color(0xff005aee),
+            label: Container(
+              margin: EdgeInsets.all(8), // Add your desired margin
+              child: const Text(
+                'Show Result',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Sora',
+                  fontWeight: FontWeight.w500,
+                  height: 1.26,
+                  color: Colors.white,
+                  letterSpacing: 0, // Add your desired letter spacing
+                ),
+              ),
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.circular(8), // Add your desired border radius
             ),
           ),
         ),
