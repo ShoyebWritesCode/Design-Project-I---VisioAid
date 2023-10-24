@@ -530,15 +530,15 @@ class HomePage extends StatelessWidget {
           ],
         ),
         child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 37, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
           child: GNav(
             haptic: true,
             //backgroundColor: Colors.black,
             color: Color(0xff005aee),
             activeColor: Colors.white,
             tabBackgroundColor: Color(0xff005aee),
-            gap: 2,
-            padding: EdgeInsets.all(16),
+            //gap: 2,
+            padding: EdgeInsets.all(12),
             iconSize: 32,
             tabs: [
               GButton(
