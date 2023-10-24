@@ -41,9 +41,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.13.1"
-
-
+  flutter_launcher_icons: '^0.13.1'
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,11 +52,12 @@ dev_dependencies:
   flutter_pytorch: ^1.0.1
   image_picker: ^0.8.6
   gif: ^2.2.0
+  camera: 0.10.5+5
 
 flutter_launcher_icons:
-  android: "launcher_icon"
+  android: 'launcher_icon'
   ios: true
-  image_path: "assets/logo.png"
+  image_path: 'assets/logo.png'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -89,13 +88,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-      - family: Sora
-        fonts:
-          - asset: fonts/Sora-Regular.ttf
-          - asset: fonts/Sora-Bold.ttf
-          - asset: fonts/Sora-Light.ttf
-          - asset: fonts/Sora-Medium.ttf
-          - asset: fonts/Sora-SemiBold.ttf
+    - family: Sora
+      fonts:
+        - asset: fonts/Sora-Regular.ttf
+        - asset: fonts/Sora-Bold.ttf
+        - asset: fonts/Sora-Light.ttf
+        - asset: fonts/Sora-Medium.ttf
+        - asset: fonts/Sora-SemiBold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
