@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:object_detection/CameraScreen.dart';
 import 'package:object_detection/HomeScreen.dart';
 import 'package:object_detection/ObjectDetected.dart';
 import 'dart:async';
@@ -9,7 +10,6 @@ import 'package:flutter_pytorch/pigeon.dart';
 import 'package:flutter_pytorch/flutter_pytorch.dart';
 import 'package:object_detection/LoaderState.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-
 
 class HomePage extends StatelessWidget {
   @override
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 // Handle the tap, e.g., navigate to another screen
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ObjectDetectedScreen()));
+                    MaterialPageRoute(builder: (context) => CameraScreen()));
               },
               child: Container(
                 margin: EdgeInsets.fromLTRB(24, 16, 24, 16),
