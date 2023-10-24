@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
                                 child: Text(
-                                  objDetect.isNotEmpty
+                                  objDetect.length >= 2
                                       ? objDetect[1]?.className ?? 'Unknown'
                                       : 'Unknown',
                                   style: TextStyle(
@@ -247,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               IconButton(
                                 icon: Image.asset('images/speaker.png'),
                                 onPressed: () {
-                                  if (objDetect.isNotEmpty) {
+                                  if (objDetect.length >= 2) {
                                     flutterTts.speak(
                                         objDetect[1]?.className ?? 'Unknown');
                                   }
@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
                                 child: Text(
-                                  objDetect.isNotEmpty
+                                  objDetect.length >= 3
                                       ? objDetect[2]?.className ?? 'Unknown'
                                       : 'Unknown',
                                   style: TextStyle(
@@ -294,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               IconButton(
                                 icon: Image.asset('images/speaker.png'),
                                 onPressed: () {
-                                  if (objDetect.isNotEmpty) {
+                                  if (objDetect.length >= 3) {
                                     flutterTts.speak(
                                         objDetect[2]?.className ?? 'Unknown');
                                   }
@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
                                 child: Text(
-                                  objDetect.isNotEmpty
+                                  objDetect.length >= 4
                                       ? objDetect[3]?.className ?? 'Unknown'
                                       : 'Unknown',
                                   style: TextStyle(
@@ -341,7 +341,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               IconButton(
                                 icon: Image.asset('images/speaker.png'),
                                 onPressed: () {
-                                  if (objDetect.isNotEmpty) {
+                                  if (objDetect.length >= 4) {
                                     flutterTts.speak(
                                         objDetect[3]?.className ?? 'Unknown');
                                   }
@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
                                 child: Text(
-                                  objDetect.isNotEmpty
+                                  objDetect.length >= 5
                                       ? objDetect[4]?.className ?? 'Unknown'
                                       : 'Unknown',
                                   style: TextStyle(
@@ -388,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               IconButton(
                                 icon: Image.asset('images/speaker.png'),
                                 onPressed: () {
-                                  if (objDetect.isNotEmpty) {
+                                  if (objDetect.length >= 5) {
                                     flutterTts.speak(
                                         objDetect[4]?.className ?? 'Unknown');
                                   }
