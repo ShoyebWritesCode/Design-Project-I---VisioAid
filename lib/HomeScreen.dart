@@ -325,6 +325,67 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }
                                 },
                               ),
+                              IconButton(
+                                  icon: const ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      Colors.black, // Set the desired color
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Icon(Icons
+                                        .translate), // Use Icons.translate to represent translation
+                                  ),
+                                  onPressed: () {
+                                    String classNameToTranslate =
+                                        objDetect[1]?.className ?? 'Unknown';
+                                    if (classNameToTranslate != null) {
+                                      translate(classNameToTranslate);
+                                    }
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Bangla Translation',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          content: Text(
+                                            translationResult,
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          // Add your translated text here
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Sora',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.26,
+                                                  color: Color(0xff005aee),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }),
                             ],
                           ),
                           children: [
@@ -372,6 +433,67 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }
                                 },
                               ),
+                              IconButton(
+                                  icon: const ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      Colors.black, // Set the desired color
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Icon(Icons
+                                        .translate), // Use Icons.translate to represent translation
+                                  ),
+                                  onPressed: () {
+                                    String classNameToTranslate =
+                                        objDetect[2]?.className ?? 'Unknown';
+                                    if (classNameToTranslate != null) {
+                                      translate(classNameToTranslate);
+                                    }
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Bangla Translation',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          content: Text(
+                                            translationResult,
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          // Add your translated text here
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Sora',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.26,
+                                                  color: Color(0xff005aee),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }),
                             ],
                           ),
                           children: [
@@ -419,6 +541,67 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }
                                 },
                               ),
+                              IconButton(
+                                  icon: const ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      Colors.black, // Set the desired color
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Icon(Icons
+                                        .translate), // Use Icons.translate to represent translation
+                                  ),
+                                  onPressed: () {
+                                    String classNameToTranslate =
+                                        objDetect[3]?.className ?? 'Unknown';
+                                    if (classNameToTranslate != null) {
+                                      translate(classNameToTranslate);
+                                    }
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Bangla Translation',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          content: Text(
+                                            translationResult,
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          // Add your translated text here
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Sora',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.26,
+                                                  color: Color(0xff005aee),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }),
                             ],
                           ),
                           children: [
@@ -466,6 +649,67 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }
                                 },
                               ),
+                              IconButton(
+                                  icon: const ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      Colors.black, // Set the desired color
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Icon(Icons
+                                        .translate), // Use Icons.translate to represent translation
+                                  ),
+                                  onPressed: () {
+                                    String classNameToTranslate =
+                                        objDetect[4]?.className ?? 'Unknown';
+                                    if (classNameToTranslate != null) {
+                                      translate(classNameToTranslate);
+                                    }
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Bangla Translation',
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          content: Text(
+                                            translationResult,
+                                            style: TextStyle(
+                                              fontFamily: 'Sora',
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w700,
+                                              height: 1.26,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          // Add your translated text here
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text(
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Sora',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.26,
+                                                  color: Color(0xff005aee),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }),
                             ],
                           ),
                           children: [
