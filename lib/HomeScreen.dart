@@ -8,6 +8,7 @@ import 'package:flutter_pytorch/pigeon.dart';
 import 'package:flutter_pytorch/flutter_pytorch.dart';
 import 'package:object_detection/LoaderState.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:translator/translator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,6 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
   List<ResultObjectDetection?> objDetect = [];
   bool firststate = true; // Changed to true to open the camera immediately
   bool message = false; // Changed to false to hide the message
+
+  //Google Translator
+  GoogleTranslator translator = GoogleTranslator();
+  String translationResult = "";
+
+  void translate(String text) async {
+    Translation translation = await translator.translate(text, to: "bn");
+    translationResult = translation.text;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -79,11 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     });
 
-    for (ResultObjectDetection? result in objDetect) {
-      if (result != null) {
-        await flutterTts.speak(result.className ?? "");
-      }
-    }
+    // for (ResultObjectDetection? result in objDetect) {
+    //   if (result != null) {
+    //     await flutterTts.speak(result.className ?? "");
+    //   }
+    // }
 
     scheduleTimeout(5 * 1000);
     setState(() {
@@ -216,6 +227,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         .translate), // Use Icons.translate to represent translation
                                   ),
                                   onPressed: () {
+                                    String classNameToTranslate =
+                                        objDetect[0]?.className ?? 'Unknown';
+                                    if (classNameToTranslate != null) {
+                                      translate(classNameToTranslate);
+                                    }
                                     showDialog(
                                       context: context,
                                       builder: (BuildContext context) {
@@ -230,8 +246,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                               color: Colors.black,
                                             ),
                                           ),
-                                          content: const Text(
-                                            'BOLBONA',
+                                          content: Text(
+                                            translationResult,
                                             style: TextStyle(
                                               fontFamily: 'Sora',
                                               fontSize: 32,
@@ -244,15 +260,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                           actions: <Widget>[
                                             TextButton(
                                               child: const Text(
-                                          'Close',
-                                          style: TextStyle(
-                                            fontFamily: 'Sora',
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.26,
-                                            color: Color(0xff005aee),
-                                          ),
-                                        ),
+                                                'Close',
+                                                style: TextStyle(
+                                                  fontFamily: 'Sora',
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  height: 1.26,
+                                                  color: Color(0xff005aee),
+                                                ),
+                                              ),
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
