@@ -37,6 +37,22 @@ class _HomeScreenState extends State<HomeScreen> {
     translationResult = translation.text;
   }
 
+// Mapping for description
+  Map<String, String> objectDescriptions = {
+    "person": "A human being.",
+    "bicycle": "Two-wheeled human-powered vehicle.",
+  };
+  String? getDescriptionBySubstring(String? className) {
+    if (className != null) {
+      for (final key in objectDescriptions.keys) {
+        if (className.toLowerCase().contains(key.toLowerCase())) {
+          return objectDescriptions[key];
+        }
+      }
+    }
+    return null;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -114,8 +130,6 @@ class _HomeScreenState extends State<HomeScreen> {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      // Set to false to prevent closing by tapping outside
-
       builder: (BuildContext context) {
         return DraggableScrollableSheet(
           initialChildSize: 0.4,
@@ -286,8 +300,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 100,
                               margin: EdgeInsets.symmetric(vertical: 10),
                               padding: EdgeInsets.fromLTRB(24, 6, 24, 4),
-                              child: const Text(
-                                'A bottle is a container typically made of glass, plastic, or other materials, designed to hold and store liquids or substances.',
+                              child: Text(
+                                objDetect.isNotEmpty
+                                    ? getDescriptionBySubstring(
+                                            objDetect[0]?.className) ??
+                                        'Description not found'
+                                    : 'Unknown',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Sora',
@@ -394,8 +412,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 100,
                               margin: EdgeInsets.symmetric(vertical: 10),
                               padding: EdgeInsets.fromLTRB(24, 6, 24, 4),
-                              child: const Text(
-                                'A bottle is a container typically made of glass, plastic, or other materials, designed to hold and store liquids or substances.',
+                              child: Text(
+                                objDetect.length >= 2
+                                    ? getDescriptionBySubstring(
+                                            objDetect[1]?.className) ??
+                                        'Description not found'
+                                    : 'Unknown',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Sora',
@@ -502,8 +524,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 100,
                               margin: EdgeInsets.symmetric(vertical: 10),
                               padding: EdgeInsets.fromLTRB(24, 6, 24, 4),
-                              child: const Text(
-                                'A bottle is a container typically made of glass, plastic, or other materials, designed to hold and store liquids or substances.',
+                              child: Text(
+                                objDetect.length >= 3
+                                    ? getDescriptionBySubstring(
+                                            objDetect[2]?.className) ??
+                                        'Description not found'
+                                    : 'Unknown',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Sora',
@@ -610,8 +636,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 100,
                               margin: EdgeInsets.symmetric(vertical: 10),
                               padding: EdgeInsets.fromLTRB(24, 6, 24, 4),
-                              child: const Text(
-                                'A bottle is a container typically made of glass, plastic, or other materials, designed to hold and store liquids or substances.',
+                              child: Text(
+                                objDetect.length >= 4
+                                    ? getDescriptionBySubstring(
+                                            objDetect[3]?.className) ??
+                                        'Description not found'
+                                    : 'Unknown',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Sora',
@@ -718,8 +748,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 100,
                               margin: EdgeInsets.symmetric(vertical: 10),
                               padding: EdgeInsets.fromLTRB(24, 6, 24, 4),
-                              child: const Text(
-                                'A bottle is a container typically made of glass, plastic, or other materials, designed to hold and store liquids or substances.',
+                              child: Text(
+                                objDetect.length >= 5
+                                    ? getDescriptionBySubstring(
+                                            objDetect[4]?.className) ??
+                                        'Description not found'
+                                    : 'Unknown',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontFamily: 'Sora',
