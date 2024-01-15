@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:object_detection/CameraScreen.dart';
 import 'package:object_detection/HomeScreen.dart';
+import 'package:object_detection/OCRScreen.dart';
+import 'package:object_detection/VoiceCommand.dart';
 import 'package:object_detection/ObjectDetected.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
@@ -12,9 +14,10 @@ import 'package:flutter_pytorch/flutter_pytorch.dart';
 import 'package:object_detection/LoaderState.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:object_detection/SettingsPage.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class HomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,8 +45,10 @@ class HomePage extends StatelessWidget {
                 'images/custom_settings_icon.png',
                 //color: Colors.white,
               ),
-              onPressed: () {Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SettingsPage()));},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
             ),
           )
         ],
@@ -53,7 +58,8 @@ class HomePage extends StatelessWidget {
         child: Container(
           child: Column(
             children: [
-              InkWell(//first one
+              InkWell(
+                //first one
                 onTap: () {
                   // Handle the tap, e.g., navigate to another screen
                   Navigator.push(context,
@@ -169,7 +175,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              InkWell(//2nd one
+              InkWell(
+                //2nd one
                 onTap: () {
                   // Handle the tap, e.g., navigate to another screen
                   Navigator.push(context,
@@ -285,10 +292,12 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              InkWell(//3rd one
+              InkWell(
+                //3rd one
                 onTap: () {
                   // Handle the tap, e.g., navigate to another screen
-
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => OCRScreen()));
                 },
                 child: Container(
                   margin: EdgeInsets.fromLTRB(24, 16, 24, 16),
@@ -350,8 +359,8 @@ class HomePage extends StatelessWidget {
                             ),
                             Container(
                               constraints: const BoxConstraints(
-                                //maxWidth: 200, // Set your desired maximum width
-                              ),
+                                  //maxWidth: 200, // Set your desired maximum width
+                                  ),
                               height: 56,
                               decoration: const BoxDecoration(
                                 color: Color(0xff005aee),
@@ -400,7 +409,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              InkWell(//4th one
+              InkWell(
+                //4th one
                 onTap: () {
                   // Handle the tap, e.g., navigate to another screen
                 },
@@ -464,8 +474,8 @@ class HomePage extends StatelessWidget {
                             ),
                             Container(
                               constraints: const BoxConstraints(
-                                //maxWidth: 200, // Set your desired maximum width
-                              ),
+                                  //maxWidth: 200, // Set your desired maximum width
+                                  ),
                               height: 56,
                               decoration: const BoxDecoration(
                                 color: Color(0xff005aee),
@@ -529,7 +539,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
           child: GNav(
             haptic: true,
@@ -570,10 +580,13 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
+                onPressed: () async {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => VoiceCommand()));
+                },
               ),
             ],
           ),
-
         ),
       ),
     );
