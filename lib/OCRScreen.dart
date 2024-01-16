@@ -19,7 +19,9 @@ class OCRScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Image to text',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        //primarySwatch: Color(0xff005aee), // Set primarySwatch to transparent to remove the purple color
+        primaryColor: Color(0xff005aee), // Set the primary color to 0xff005aee
+        // Other theme configurations...
       ),
       home: const MainScreen(),
     );
@@ -95,35 +97,105 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
             Scaffold(
               appBar: AppBar(
                 title: const Text('Image to Text'),
+                backgroundColor: Color(0xff005aee), // Set the background color of the AppBar
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted
                   ? Column(
-                      children: [
-                        Expanded(
-                          child: Container(),
+                children: [
+                  Expanded(
+                    child: Container(),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(bottom: 30.0),
+                    child: Center(
+                      child: ElevatedButton(
+                        onPressed: _scanImage,
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xff005aee),
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(20),
+                          shape: CircleBorder(),
+                          elevation: 5,
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(bottom: 30.0),
-                          child: Center(
-                            child: ElevatedButton(
-                              onPressed: _scanImage,
-                              child: const Text('Scan text'),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  : Center(
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-                        child: const Text(
-                          'Camera permission denied',
-                          textAlign: TextAlign.center,
+                        child: Icon(
+                          Icons.camera_alt,
+                          size: 40,
                         ),
                       ),
                     ),
+                  ),
+                ],
+              )
+                  : Center(
+                child: Container(
+                  padding: const EdgeInsets.only(left: 24.0, right: 24.0),
+                  child: const Text(
+                    'Camera permission denied',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
             ),
+
+            // Scaffold(
+            //   appBar: AppBar(
+            //     title: const Text('Image to Text'),
+            //   ),
+            //   backgroundColor: _isPermissionGranted ? Colors.transparent : null,
+            //   body: _isPermissionGranted
+            //       ? Column(
+            //           children: [
+            //             Expanded(
+            //               child: Container(),
+            //             ),
+            //             Container(
+            //               padding: const EdgeInsets.only(bottom: 30.0),
+            //               child: Center(
+            //                 child: ElevatedButton(
+            //                   onPressed: _scanImage,
+            //                   style: ElevatedButton.styleFrom(
+            //                     primary: Color(0xff005aee), // Set the background color to a dark color
+            //                     onPrimary: Colors.white, // Set the text color to white
+            //                     padding: EdgeInsets.all(20), // Adjust padding as needed
+            //                     shape: CircleBorder(), // Set the shape to a circle
+            //                     elevation: 5, // Set the elevation (shadow) as needed
+            //                   ),
+            //                   child: Icon(
+            //                     Icons.camera_alt,
+            //                     size: 40, // Adjust icon size as needed
+            //                   ),
+            //                 ),
+            //               ),
+            //             ),
+            //
+            //             // Container(
+            //             //   padding: const EdgeInsets.only(bottom: 30.0),
+            //             //   child: Center(
+            //             //     child: ElevatedButton(
+            //             //       onPressed: _scanImage,
+            //             //       child: const Text('Scan text'),
+            //             //     ),
+            //             //   ),
+            //             // ),
+            //           ],
+            //         )
+            //       : Center(
+            //           child: Container(
+            //             padding: const EdgeInsets.only(left: 24.0, right: 24.0),
+            //             child: const Text(
+            //               'Camera permission denied',
+            //               textAlign: TextAlign.center,
+            //             ),
+            //           ),
+            //         ),
+            // ),
           ],
         );
       },

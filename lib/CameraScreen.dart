@@ -144,30 +144,62 @@ class _CameraScreenState extends State<CameraScreen> {
       );
     }
 
-    return Scaffold(
-      appBar: AppBar(title: Text("Camera Screen")),
-      body: Column(
-        children: <Widget>[
-          AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: CameraPreview(_controller),
-          ),
-          Expanded(
-            child: ListView(
-              children: detectedObjectNames.map((name) {
-                return ListTile(
-                  title: Text(
-                    name,
-                    style: TextStyle(
-                        color: Colors.red), // Set the text color to red
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
-        ],
-      ),
-    );
+     return
+       Scaffold(
+         appBar: AppBar(
+           title: Text("Camera Screen"),
+           backgroundColor: Color(0xff005aee), // Set the background color of the AppBar
+         ),
+         body: Column(
+           children: <Widget>[
+             AspectRatio(
+               aspectRatio: _controller.value.aspectRatio,
+               child: CameraPreview(_controller),
+             ),
+             Expanded(
+               child: ListView(
+                 children: detectedObjectNames.map((name) {
+                   return ListTile(
+                     title: Text(
+                       name,
+                       style: TextStyle(
+                         color: Colors.red, // Set the text color to red
+                         fontSize: 18, // Set the font size as needed
+                         fontWeight: FontWeight.bold, // Set the font weight as needed
+                       ),
+                     ),
+                   );
+                 }).toList(),
+               ),
+             ),
+           ],
+         ),
+       );
+
+    // Scaffold(
+    //   appBar: AppBar(title: Text("Camera Screen")),
+    //   body: Column(
+    //     children: <Widget>[
+    //       AspectRatio(
+    //         aspectRatio: _controller.value.aspectRatio,
+    //         child: CameraPreview(_controller),
+    //       ),
+    //       Expanded(
+    //         child: ListView(
+    //           children: detectedObjectNames.map((name) {
+    //             return ListTile(
+    //               title: Text(
+    //                 name,
+    //                 style: TextStyle(
+    //                     color: Colors.red), // Set the text color to red
+    //               ),
+    //             );
+    //           }).toList(),
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 
   @override

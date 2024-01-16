@@ -16,6 +16,11 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:object_detection/SettingsPage.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:flutter/material.dart';
+import 'package:overlay_support/overlay_support.dart';
+import 'overlay_utils.dart';
+import 'faq_page.dart';
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -40,16 +45,16 @@ class HomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.fromLTRB(0, 16, 16, 8), // Add right padding
-            child: IconButton(
-              icon: Image.asset(
-                'images/custom_settings_icon.png',
-                //color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()));
-              },
-            ),
+            // child: IconButton(
+            //   icon: Image.asset(
+            //     'images/custom_settings_icon.png',
+            //     //color: Colors.white,
+            //   ),
+            //   onPressed: () {
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => SettingsPage()));
+            //   },
+            // ),
           )
         ],
       ),
@@ -112,16 +117,43 @@ class HomePage extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
-                              child: const Text(
-                                'Detect Objects',
-                                style: TextStyle(
-                                  fontSize: 32,
-                                  fontFamily: 'Sora',
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.26,
-                                  color: Color(0xff000000),
+                              child: RichText(
+                                text: TextSpan(
+                                  style: TextStyle(
+                                    //fontSize: 42,
+                                    fontFamily: 'Sora',
+                                    height: 1.26,
+                                    color: Color(0xff000000),
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '1. Detect ',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 36,// Use FontWeight.normal for thin
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Objects',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
+
+                              // child: const Text(
+                              //   'Detect Objects',
+                              //   style: TextStyle(
+                              //     fontSize: 42,
+                              //     fontFamily: 'Sora',
+                              //     fontWeight: FontWeight.w700,
+                              //     height: 1.26,
+                              //     color: Color(0xff000000),
+                              //   ),
+                              // ),
                             ),
                             Container(
                               constraints: const BoxConstraints(
@@ -135,22 +167,38 @@ class HomePage extends StatelessWidget {
                                   bottomRight: Radius.circular(8),
                                 ),
                               ),
-                              child: const Center(
+                              child: Align(
+                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
                                 child: Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                                  // Add left margin
+                                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
                                     'in Real-Time',
                                     style: TextStyle(
                                       fontFamily: 'Sora',
-                                      fontSize: 32,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.w700,
                                       height: 1.26,
-                                      color: Color(0xffffffff),
+                                      color: Color(0xf0ffffff),
                                     ),
                                   ),
                                 ),
                               ),
+                              // child: const Center(
+                              //   child: Padding(
+                              //     padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                              //     // Add left margin
+                              //     child: Text(
+                              //       'in Real-Time',
+                              //       style: TextStyle(
+                              //         fontFamily: 'Sora',
+                              //         fontSize: 24,
+                              //         fontWeight: FontWeight.w700,
+                              //         height: 1.26,
+                              //         color: Color(0xffffffff),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                           ],
                         ),
@@ -161,8 +209,8 @@ class HomePage extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Container(
-                            width: 76.08,
-                            height: 64,
+                            width: 76,
+                            height: 76,
                             child: Image.asset(
                               'images/card_1.png',
                               width: 76.08,
@@ -229,14 +277,30 @@ class HomePage extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
-                              child: const Text(
-                                'Detect Objects',
-                                style: TextStyle(
-                                  fontSize: 32,
-                                  fontFamily: 'Sora',
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.26,
-                                  color: Color(0xff000000),
+                              child: RichText(
+                                text: TextSpan(
+                                  style: TextStyle(
+                                    //fontSize: 42,
+                                    fontFamily: 'Sora',
+                                    height: 1.26,
+                                    color: Color(0xff000000),
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '2. Detect ',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 36,// Use FontWeight.normal for thin
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Objects',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -252,18 +316,18 @@ class HomePage extends StatelessWidget {
                                   bottomRight: Radius.circular(8),
                                 ),
                               ),
-                              child: const Center(
+                              child: Align(
+                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
                                 child: Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                                  // Add left margin
+                                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
                                     'from Images',
                                     style: TextStyle(
                                       fontFamily: 'Sora',
-                                      fontSize: 32,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.w700,
                                       height: 1.26,
-                                      color: Color(0xffffffff),
+                                      color: Color(0xf0ffffff),
                                     ),
                                   ),
                                 ),
@@ -346,14 +410,30 @@ class HomePage extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
-                              child: const Text(
-                                'Detect       Text',
-                                style: TextStyle(
-                                  fontSize: 32,
-                                  fontFamily: 'Sora',
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.26,
-                                  color: Color(0xff000000),
+                              child: RichText(
+                                text: TextSpan(
+                                  style: TextStyle(
+                                    //fontSize: 42,
+                                    fontFamily: 'Sora',
+                                    height: 1.26,
+                                    color: Color(0xff000000),
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '3. Detect ',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 36,// Use FontWeight.normal for thin
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Texts',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -369,18 +449,18 @@ class HomePage extends StatelessWidget {
                                   bottomRight: Radius.circular(8),
                                 ),
                               ),
-                              child: const Center(
+                              child: Align(
+                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
                                 child: Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                                  // Add left margin
+                                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
                                     'from Images',
                                     style: TextStyle(
                                       fontFamily: 'Sora',
-                                      fontSize: 32,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.w700,
                                       height: 1.26,
-                                      color: Color(0xffffffff),
+                                      color: Color(0xf0ffffff),
                                     ),
                                   ),
                                 ),
@@ -395,8 +475,8 @@ class HomePage extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Container(
-                            width: 76.08,
-                            height: 64,
+                            width: 76,
+                            height: 76,
                             child: Image.asset(
                               'images/card_3.png',
                               width: 76.08,
@@ -461,14 +541,30 @@ class HomePage extends StatelessWidget {
                           children: [
                             Container(
                               margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
-                              child: const Text(
-                                'Detect Colors',
-                                style: TextStyle(
-                                  fontSize: 32,
-                                  fontFamily: 'Sora',
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.26,
-                                  color: Color(0xff000000),
+                              child: RichText(
+                                text: TextSpan(
+                                  style: TextStyle(
+                                    //fontSize: 42,
+                                    fontFamily: 'Sora',
+                                    height: 1.26,
+                                    color: Color(0xff000000),
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '4. Detect ',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 36,// Use FontWeight.normal for thin
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Colors',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -484,18 +580,18 @@ class HomePage extends StatelessWidget {
                                   bottomRight: Radius.circular(8),
                                 ),
                               ),
-                              child: const Center(
+                              child: Align(
+                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
                                 child: Padding(
-                                  padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                                  // Add left margin
+                                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
                                     'from Images',
                                     style: TextStyle(
                                       fontFamily: 'Sora',
-                                      fontSize: 32,
+                                      fontSize: 28,
                                       fontWeight: FontWeight.w700,
                                       height: 1.26,
-                                      color: Color(0xffffffff),
+                                      color: Color(0xf0ffffff),
                                     ),
                                   ),
                                 ),
@@ -563,13 +659,20 @@ class HomePage extends StatelessWidget {
               ),
               GButton(
                 icon: Icons.contact_support,
-                text: 'QnA',
+                text: 'FAQ',
                 textStyle: TextStyle(
                   fontFamily: 'Sora',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
+                onPressed: () {
+                  // Navigate to the FAQPage when the button is pressed
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FAQPage()),
+                  );
+                },
               ),
               GButton(
                 icon: Icons.mic,
@@ -581,10 +684,24 @@ class HomePage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () async {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => VoiceCommand()));
+                  // Show the overlay when the "Voice Assist" button is pressed
+                  OverlayUtils.showOverlay(context);
                 },
               ),
+              // GButton(
+              //   icon: Icons.mic,
+              //   text: 'Voice Assist',
+              //   textStyle: TextStyle(
+              //     fontFamily: 'Sora',
+              //     fontSize: 18,
+              //     fontWeight: FontWeight.bold,
+              //     color: Colors.white,
+              //   ),
+              //   onPressed: () async {
+              //     Navigator.push(context,
+              //         MaterialPageRoute(builder: (context) => VoiceCommand()));
+              //   },
+              // ),
             ],
           ),
         ),

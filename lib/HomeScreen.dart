@@ -385,7 +385,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Description not found'
                                     : 'Unknown',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontFamily: 'Sora',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
@@ -497,7 +497,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Description not found'
                                     : 'Unknown',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontFamily: 'Sora',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
@@ -609,7 +609,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Description not found'
                                     : 'Unknown',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontFamily: 'Sora',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
@@ -721,7 +721,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Description not found'
                                     : 'Unknown',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontFamily: 'Sora',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
@@ -833,7 +833,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Description not found'
                                     : 'Unknown',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 24,
                                   fontFamily: 'Sora',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
@@ -906,7 +906,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: Container(
               margin: EdgeInsets.all(8), // Add your desired margin
               child: const Text(
-                'Show Result',
+                'Show Detected Objects',
                 style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'Sora',
