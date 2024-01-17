@@ -21,7 +21,6 @@ import 'package:overlay_support/overlay_support.dart';
 import 'overlay_utils.dart';
 import 'faq_page.dart';
 
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -130,14 +129,16 @@ class HomePage extends StatelessWidget {
                                       text: '1. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontSize: 36,// Use FontWeight.normal for thin
+                                        fontSize:
+                                            36, // Use FontWeight.normal for thin
                                       ),
                                     ),
                                     TextSpan(
                                       text: 'Objects',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                        fontSize:
+                                            44, // Use FontWeight.w700 for bold
                                       ),
                                     ),
                                   ],
@@ -168,7 +169,8 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               child: Align(
-                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
+                                alignment: Alignment
+                                    .centerLeft, // Adjust this alignment as needed
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
@@ -290,14 +292,16 @@ class HomePage extends StatelessWidget {
                                       text: '2. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontSize: 36,// Use FontWeight.normal for thin
+                                        fontSize:
+                                            36, // Use FontWeight.normal for thin
                                       ),
                                     ),
                                     TextSpan(
                                       text: 'Objects',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                        fontSize:
+                                            44, // Use FontWeight.w700 for bold
                                       ),
                                     ),
                                   ],
@@ -317,7 +321,8 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               child: Align(
-                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
+                                alignment: Alignment
+                                    .centerLeft, // Adjust this alignment as needed
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
@@ -423,14 +428,16 @@ class HomePage extends StatelessWidget {
                                       text: '3. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontSize: 36,// Use FontWeight.normal for thin
+                                        fontSize:
+                                            36, // Use FontWeight.normal for thin
                                       ),
                                     ),
                                     TextSpan(
                                       text: 'Texts',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                        fontSize:
+                                            44, // Use FontWeight.w700 for bold
                                       ),
                                     ),
                                   ],
@@ -450,7 +457,8 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               child: Align(
-                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
+                                alignment: Alignment
+                                    .centerLeft, // Adjust this alignment as needed
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
@@ -554,14 +562,16 @@ class HomePage extends StatelessWidget {
                                       text: '4. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontSize: 36,// Use FontWeight.normal for thin
+                                        fontSize:
+                                            36, // Use FontWeight.normal for thin
                                       ),
                                     ),
                                     TextSpan(
                                       text: 'Colors',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 44,// Use FontWeight.w700 for bold
+                                        fontSize:
+                                            44, // Use FontWeight.w700 for bold
                                       ),
                                     ),
                                   ],
@@ -581,7 +591,8 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               child: Align(
-                                alignment: Alignment.centerLeft, // Adjust this alignment as needed
+                                alignment: Alignment
+                                    .centerLeft, // Adjust this alignment as needed
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
                                   child: Text(
@@ -685,7 +696,11 @@ class HomePage extends StatelessWidget {
                 ),
                 onPressed: () async {
                   // Show the overlay when the "Voice Assist" button is pressed
-                  OverlayUtils.showOverlay(context);
+                  //OverlayUtils.showOverlay(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VoiceCommand()),
+                  );
                 },
               ),
               // GButton(

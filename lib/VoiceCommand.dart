@@ -130,8 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton.icon(
                   onPressed: _speechEnabled
                       ? () {
-                    _requestMicrophonePermissionAndStartSpeech();
-                  }
+                          _requestMicrophonePermissionAndStartSpeech();
+                        }
                       : null,
                   icon: Icon(Icons.mic),
                   label: Text('Start Listening'),
@@ -173,9 +173,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ElevatedButton.icon(
                 onPressed: _speechEnabled
                     ? () {
-                  _requestMicrophonePermissionAndStartSpeech();
-                  Navigator.pop(context); // Close the popup after starting
-                }
+                        _requestMicrophonePermissionAndStartSpeech();
+                        Navigator.pop(
+                            context); // Close the popup after starting
+                      }
                     : null,
                 icon: Icon(Icons.mic),
                 label: Text('Start Listening'),
