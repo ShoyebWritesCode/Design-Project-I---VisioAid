@@ -24,22 +24,25 @@ class FAQPage extends StatelessWidget {
         child: Column(
           children: [
             FAQItem(
-              question: 'What is Flutter?',
-              answer: 'Flutter is an open-source UI software development toolkit created by Google.',
+              question: ' What is the purpose of the app?',
+              answer:
+                  'The app is designed to identify objects and colors in real-time using the camera of your Android device.',
+            ),
+            FAQItem(
+              question: 'How does the app work?',
+              answer:
+                  'From homepage, user can scroll through different portions such as detect objects from in real-time, detect objects from objects, detect texts from images, detect colors from images. And in the ',
             ),
             FAQItem(
               question: 'How does Flutter work?',
-              answer: 'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
+              answer:
+                  'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
             ),
             FAQItem(
               question: 'How does Flutter work?',
-              answer: 'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
+              answer:
+                  'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
             ),
-            FAQItem(
-              question: 'How does Flutter work?',
-              answer: 'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
-            ),
-
 
             // Add more FAQItem widgets as needed
           ],

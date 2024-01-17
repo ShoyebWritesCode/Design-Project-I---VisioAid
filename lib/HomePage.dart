@@ -4,7 +4,7 @@ import 'package:object_detection/CameraScreen.dart';
 import 'package:object_detection/HomeScreen.dart';
 import 'package:object_detection/OCRScreen.dart';
 import 'package:object_detection/VoiceCommand.dart';
-//import 'package:object_detection/ColorDetectionScreen.dart';
+import 'package:object_detection/ColorDetectionScreen.dart';
 import 'package:object_detection/ObjectDetected.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
@@ -501,11 +501,11 @@ class HomePage extends StatelessWidget {
               InkWell(
                 //4th one
                 onTap: () {
-                  // Handle the tap, e.g., navigate to another screen
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => ColorDetectionScreen()));
+                  //Handle the tap, e.g., navigate to another screen
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ColorDetectionScreen()));
                 },
                 child: Container(
                   margin: EdgeInsets.fromLTRB(24, 16, 24, 24),
