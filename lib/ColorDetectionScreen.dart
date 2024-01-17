@@ -74,7 +74,8 @@ class _ColorDetectionScreenState extends State<ColorDetectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Color'),
+        title: const Text('Color Detection'),
+        backgroundColor: Color(0xff005aee),
       ),
       body: _body(context),
     );
@@ -113,9 +114,9 @@ class _ColorDetectionScreenState extends State<ColorDetectionScreen> {
                     ],
                   )
                 : const Text(
-                    'Color Detection',
+                    'Detected Color',
                     style: TextStyle(
-                      color: Colors.blueAccent,
+                      backgroundColor: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 32,
                       fontWeight: FontWeight.w600,
                     ),
@@ -144,12 +145,19 @@ class _ColorDetectionScreenState extends State<ColorDetectionScreen> {
               padding: const EdgeInsets.all(8),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color(0xff005aee),
                 borderRadius: BorderRadius.circular(6),
               ),
-              child: Text(
-                label,
-                style: const TextStyle(color: Colors.white),
+              child: Center(
+                child: Text(
+                  label,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'sora',
+                    fontSize: 24,
+                  ),
+                ),
               ),
             ),
           )
