@@ -3,6 +3,7 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:object_detection/OCRScreen.dart';
 import 'package:object_detection/HomeScreen.dart';
+// import 'package:object_detection/ColorDetectionScreen.dart';
 
 void main() {
   runApp(VoiceCommand());
@@ -96,6 +97,19 @@ class _MyHomePageState extends State<MyHomePage> {
               context,
               MaterialPageRoute(builder: (context) => HomeScreen()),
             );
+
+            // Clear the recognized text after performing the action
+            setState(() {
+              _text = '';
+              _textController.text = '';
+            });
+          }
+          if (_text.toLowerCase().contains('detect')) {
+            // Perform the action you want when 'detect' is recognized
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => MyHomepage()),
+            // );
 
             // Clear the recognized text after performing the action
             setState(() {
