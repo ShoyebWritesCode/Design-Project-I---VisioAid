@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class FAQPage extends StatelessWidget {
   @override
@@ -24,24 +25,39 @@ class FAQPage extends StatelessWidget {
         child: Column(
           children: [
             FAQItem(
-              question: ' What is the purpose of the app?',
+              question: 'What is the purpose of the app?',
               answer:
                   'The app is designed to identify objects and colors in real-time using the camera of your Android device.',
             ),
             FAQItem(
               question: 'How does the app work?',
               answer:
-                  'From homepage, user can scroll through different portions such as detect objects from in real-time, detect objects from objects, detect texts from images, detect colors from images. And in the ',
+                  'From homepage, user can scroll through different portions such as detect objects from in real-time, detect objects from objects, detect texts from images, detect colors from images. User can also use voice assistant to run the features. ',
             ),
             FAQItem(
-              question: 'How does Flutter work?',
+              question: 'What types of objects can the app detect?',
               answer:
-                  'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
+                  'The app can detect a wide range of objects, including everyday items, products, fruits, vehicles, groceries etc.',
             ),
             FAQItem(
-              question: 'How does Flutter work?',
+              question: 'What types of color can the app identify?',
               answer:
-                  'Flutter uses a reactive framework to build cross-platform applications with a single codebase.',
+                  'The app can identify a wide spectrum of colors from images',
+            ),
+            FAQItem(
+              question: 'What permissions does the app require?',
+              answer:
+                  'The app requires camera and voice permissions to access the device camera for real-time object and color detection. It also requires internet connection.',
+            ),
+            FAQItem(
+              question: 'What permissions does the app require?',
+              answer:
+                  'The app requires camera and voice permissions to access the device camera for real-time object and color detection. It also requires internet connection.',
+            ),
+            FAQItem(
+              question: 'Can the app translate objects and texts? ',
+              answer:
+                  'Yes, the app has the capability to recognize and translate objects and texts present in images.',
             ),
 
             // Add more FAQItem widgets as needed
@@ -55,6 +71,7 @@ class FAQPage extends StatelessWidget {
 class FAQItem extends StatelessWidget {
   final String question;
   final String answer;
+  late final String combinedText = '$question $answer';
 
   FAQItem({required this.question, required this.answer});
 
@@ -87,6 +104,7 @@ class FAQItem extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.volume_up),
               onPressed: () {
+                _speakText(combinedText);
                 // You can implement the logic to play the corresponding sound for the FAQ item
               },
             ),
@@ -95,4 +113,10 @@ class FAQItem extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<void> _speakText(String text) async {
+  FlutterTts flutterTts = FlutterTts();
+  await flutterTts.setLanguage("en-US");
+  await flutterTts.speak(text);
 }
