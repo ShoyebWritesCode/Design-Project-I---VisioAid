@@ -74,7 +74,15 @@ class _ColorDetectionScreenState extends State<ColorDetectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Color Detection'),
+        title: const Text('Color Detection',
+          style: TextStyle(
+            fontSize: 18,
+            fontFamily: 'Sora',
+            fontWeight: FontWeight.w600,
+            height: 1.26,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Color(0xff005aee),
       ),
       body: _body(context),
@@ -89,82 +97,80 @@ class _ColorDetectionScreenState extends State<ColorDetectionScreen> {
             _mediumVerticalSpacer(),
             _hasRunModel
                 ? Column(
-                    children: [
-                      SizedBox(
-                        height: 300,
-                        width: MediaQuery.of(context).size.width,
-                        child: _image != null
-                            ? Image.file(_image!)
-                            : Container(), // Check for null
-                      ),
-                      _mediumVerticalSpacer(),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey)),
-                        child: Text(
-                          '${_result?[0]['label'] ?? 'Undefined'}', // Check for null and provide a default value
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                : const Text(
-                    'Detected Color',
-                    style: TextStyle(
-                      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600,
+              children: [
+                SizedBox(
+                  height: 300,
+                  width: MediaQuery.of(context).size.width,
+                  child: _image != null
+                      ? Image.file(_image!)
+                      : Container(), // Check for null
+                ),
+                _mediumVerticalSpacer(),
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(8), // Add border radius
+                  //   border: Border.all(color: Color(0xff005aee),),),
+
+                  child: Text(
+                    '${_result?[0]['label'] ?? 'Undefined'}', // Check for null and provide a default value
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Sora',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 38,
                     ),
                   ),
+                )
+              ],
+            )
+                : Container(), // Removed the 'detected object' text
             Expanded(child: _selectionButtons())
           ],
         ),
-      );
-  Widget _selectionButtons() => Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          _selectionPhotos('Capture photo', pickCameraImage),
-          _mediumVerticalSpacer(),
-          _selectionPhotos('Select photo', pickGalleryImage),
-          _mediumVerticalSpacer(),
-        ],
-      );
 
-  Widget _selectionPhotos(final String label, final VoidCallback onTap) =>
-      Column(
-        children: [
-          GestureDetector(
-            onTap: onTap,
-            child: Container(
-              width: 150,
-              padding: const EdgeInsets.all(8),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Color(0xff005aee),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Center(
-                child: Text(
-                  label,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'sora',
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      );
+  );
+  Widget _selectionButtons() => Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _selectionPhotos('Capture photo', pickCameraImage),
+        SizedBox(height: 16.0), // Adjust the height as needed for spacing
+        _selectionPhotos('Select photo', pickGalleryImage),
+      ],
+    ),
+  );
+
+  Widget _selectionPhotos(final String label, final VoidCallback onTap) => Container(
+    width: 220,
+    height: 60, // Adjust the height
+    margin: EdgeInsets.symmetric(horizontal: 24.0),
+    child: GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Color(0xff005aee),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          label,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Sora',
+            fontSize: 24,
+          ),
+        ),
+      ),
+    ),
+  );
 
   Widget _mediumVerticalSpacer() => const SizedBox(
-        height: 30,
-      );
+    height: 30,
+  );
+
+
 }

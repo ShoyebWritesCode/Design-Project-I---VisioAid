@@ -143,51 +143,80 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Voice Command'),
+        title: Padding(
+          padding: EdgeInsets.only(top: 34.0),
+          child: Text(
+            'Voice Command',
+            style: TextStyle(
+              fontFamily: 'Sora',
+              color: Colors.black,
+            ),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // ElevatedButton.icon(
-                //   onPressed: _speechEnabled
-                //       ? () {
-                //           _requestMicrophonePermissionAndStartSpeech();
-                //         }
-                //       : null,
-                //   icon: Icon(Icons.mic),
-                //   label: Text('Start Listening'),
-                //   style: ElevatedButton.styleFrom(
-                //     primary: Colors.black, // Set the button color
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(30.0),
-                //     ),
-                //   ),
-                // ),
-                SizedBox(width: 30),
-                ElevatedButton.icon(
-                  onPressed: _stopListeningAndNavigateToHome,
-                  icon: Icon(Icons.stop),
-                  label: Text('Stop Listening'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.red, // Set the button color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(100.0),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'We are listening..',
+                style: TextStyle(
+                  fontFamily: 'Sora',
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 16.0),
+              Image.asset(
+                'images/mic.png', // Replace with the actual image path
+                height: 100.0,
+                width: 100.0,
+                // Add any additional styling or properties as needed
+              ),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: _stopListeningAndNavigateToHome,
+                    icon: Icon(
+                      Icons.stop,
+                      color: Color(0xff005aee), // Change the color of the stop icon
+                    ),
+                    label: Text(
+                      'Stop Listening',
+                      style: TextStyle(
+                        fontFamily: 'Sora', // Replace with your font family
+                        fontSize: 18.0,
+                        color: Colors.black, // Change the text color as needed
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white, // Set the button color to white
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        side: BorderSide(color: Color(0xff005aee)), // Add border with blue color
+                      ),
+                      elevation: 0, // Remove the shadow
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+
 
   void showVoiceCommandPopup() {
     showDialog(

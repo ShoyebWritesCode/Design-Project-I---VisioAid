@@ -63,169 +63,169 @@ class HomePage extends StatelessWidget {
         child: Container(
           child: Column(
             children: [
-              InkWell(
-                //first one
-                onTap: () {
-                  // Handle the tap, e.g., navigate to another screen
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CameraScreen()));
-                },
-                child: Container(
-                  margin: EdgeInsets.fromLTRB(24, 24, 24, 16),
-                  padding: EdgeInsets.fromLTRB(0, 45, 0, 36),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xffa0a0a0)),
-                    color: Color(0xffffffff),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x19616161),
-                        offset: Offset(0, 2),
-                        blurRadius: 2.5,
-                      ),
-                      BoxShadow(
-                        color: Color(0x16616161),
-                        offset: Offset(0, 9),
-                        blurRadius: 4.5,
-                      ),
-                      BoxShadow(
-                        color: Color(0x0c616161),
-                        offset: Offset(0, 21),
-                        blurRadius: 6,
-                      ),
-                      BoxShadow(
-                        color: Color(0x02616161),
-                        offset: Offset(0, 37),
-                        blurRadius: 7.5,
-                      ),
-                      BoxShadow(
-                        color: Color(0x00616161),
-                        offset: Offset(0, 57),
-                        blurRadius: 8,
-                      ),
-                    ],
-                  ),
-                  child: Stack(
-                    //crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                        width: 250,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
-                              child: RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    //fontSize: 42,
-                                    fontFamily: 'Sora',
-                                    height: 1.26,
-                                    color: Color(0xff000000),
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: '1. Detect ',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        fontSize:
-                                            36, // Use FontWeight.normal for thin
-                                      ),
-                                    ),
-                                    TextSpan(
-                                      text: 'Objects',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize:
-                                            44, // Use FontWeight.w700 for bold
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              // child: const Text(
-                              //   'Detect Objects',
-                              //   style: TextStyle(
-                              //     fontSize: 42,
-                              //     fontFamily: 'Sora',
-                              //     fontWeight: FontWeight.w700,
-                              //     height: 1.26,
-                              //     color: Color(0xff000000),
-                              //   ),
-                              // ),
-                            ),
-                            Container(
-                              constraints: const BoxConstraints(
-                                  //maxWidth: 200, // Set your desired maximum width
-                                  ),
-                              height: 56,
-                              decoration: const BoxDecoration(
-                                color: Color(0xff005aee),
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(8),
-                                  bottomRight: Radius.circular(8),
-                                ),
-                              ),
-                              child: Align(
-                                alignment: Alignment
-                                    .centerLeft, // Adjust this alignment as needed
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
-                                  child: Text(
-                                    'in Real-Time',
-                                    style: TextStyle(
-                                      fontFamily: 'Sora',
-                                      fontSize: 28,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.26,
-                                      color: Color(0xf0ffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              // child: const Center(
-                              //   child: Padding(
-                              //     padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                              //     // Add left margin
-                              //     child: Text(
-                              //       'in Real-Time',
-                              //       style: TextStyle(
-                              //         fontFamily: 'Sora',
-                              //         fontSize: 24,
-                              //         fontWeight: FontWeight.w700,
-                              //         height: 1.26,
-                              //         color: Color(0xffffffff),
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(33, 0, 24, 0),
-                        // Add right, left, top, and bottom padding
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            width: 76,
-                            height: 76,
-                            child: Image.asset(
-                              'images/card_1.png',
-                              width: 76.08,
-                              height: 64,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              // InkWell(
+              //   //first one
+              //   onTap: () {
+              //     // Handle the tap, e.g., navigate to another screen
+              //     Navigator.push(context,
+              //         MaterialPageRoute(builder: (context) => CameraScreen()));
+              //   },
+              //   child: Container(
+              //     margin: EdgeInsets.fromLTRB(24, 24, 24, 16),
+              //     padding: EdgeInsets.fromLTRB(0, 45, 0, 36),
+              //     width: double.infinity,
+              //     decoration: BoxDecoration(
+              //       border: Border.all(color: Color(0xffa0a0a0)),
+              //       color: Color(0xffffffff),
+              //       borderRadius: BorderRadius.circular(16),
+              //       boxShadow: const [
+              //         BoxShadow(
+              //           color: Color(0x19616161),
+              //           offset: Offset(0, 2),
+              //           blurRadius: 2.5,
+              //         ),
+              //         BoxShadow(
+              //           color: Color(0x16616161),
+              //           offset: Offset(0, 9),
+              //           blurRadius: 4.5,
+              //         ),
+              //         BoxShadow(
+              //           color: Color(0x0c616161),
+              //           offset: Offset(0, 21),
+              //           blurRadius: 6,
+              //         ),
+              //         BoxShadow(
+              //           color: Color(0x02616161),
+              //           offset: Offset(0, 37),
+              //           blurRadius: 7.5,
+              //         ),
+              //         BoxShadow(
+              //           color: Color(0x00616161),
+              //           offset: Offset(0, 57),
+              //           blurRadius: 8,
+              //         ),
+              //       ],
+              //     ),
+              //     child: Stack(
+              //       //crossAxisAlignment: CrossAxisAlignment.center,
+              //       children: [
+              //         Container(
+              //           margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+              //           width: 250,
+              //           child: Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Container(
+              //                 margin: const EdgeInsets.fromLTRB(24, 0, 0, 7),
+              //                 child: RichText(
+              //                   text: TextSpan(
+              //                     style: TextStyle(
+              //                       //fontSize: 42,
+              //                       fontFamily: 'Sora',
+              //                       height: 1.26,
+              //                       color: Color(0xff000000),
+              //                     ),
+              //                     children: [
+              //                       TextSpan(
+              //                         text: '1. Detect ',
+              //                         style: TextStyle(
+              //                           fontWeight: FontWeight.normal,
+              //                           fontSize:
+              //                               36, // Use FontWeight.normal for thin
+              //                         ),
+              //                       ),
+              //                       TextSpan(
+              //                         text: 'Objects',
+              //                         style: TextStyle(
+              //                           fontWeight: FontWeight.w700,
+              //                           fontSize:
+              //                               44, // Use FontWeight.w700 for bold
+              //                         ),
+              //                       ),
+              //                     ],
+              //                   ),
+              //                 ),
+              //
+              //                 // child: const Text(
+              //                 //   'Detect Objects',
+              //                 //   style: TextStyle(
+              //                 //     fontSize: 42,
+              //                 //     fontFamily: 'Sora',
+              //                 //     fontWeight: FontWeight.w700,
+              //                 //     height: 1.26,
+              //                 //     color: Color(0xff000000),
+              //                 //   ),
+              //                 // ),
+              //               ),
+              //               Container(
+              //                 constraints: const BoxConstraints(
+              //                     //maxWidth: 200, // Set your desired maximum width
+              //                     ),
+              //                 height: 56,
+              //                 decoration: const BoxDecoration(
+              //                   color: Color(0xff005aee),
+              //                   borderRadius: BorderRadius.only(
+              //                     topRight: Radius.circular(8),
+              //                     bottomRight: Radius.circular(8),
+              //                   ),
+              //                 ),
+              //                 child: Align(
+              //                   alignment: Alignment
+              //                       .centerLeft, // Adjust this alignment as needed
+              //                   child: Padding(
+              //                     padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+              //                     child: Text(
+              //                       'in Real-Time',
+              //                       style: TextStyle(
+              //                         fontFamily: 'Sora',
+              //                         fontSize: 28,
+              //                         fontWeight: FontWeight.w700,
+              //                         height: 1.26,
+              //                         color: Color(0xf0ffffff),
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 // child: const Center(
+              //                 //   child: Padding(
+              //                 //     padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+              //                 //     // Add left margin
+              //                 //     child: Text(
+              //                 //       'in Real-Time',
+              //                 //       style: TextStyle(
+              //                 //         fontFamily: 'Sora',
+              //                 //         fontSize: 24,
+              //                 //         fontWeight: FontWeight.w700,
+              //                 //         height: 1.26,
+              //                 //         color: Color(0xffffffff),
+              //                 //       ),
+              //                 //     ),
+              //                 //   ),
+              //                 // ),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.fromLTRB(33, 0, 24, 0),
+              //           // Add right, left, top, and bottom padding
+              //           child: Align(
+              //             alignment: Alignment.centerRight,
+              //             child: Container(
+              //               width: 76,
+              //               height: 76,
+              //               child: Image.asset(
+              //                 'images/card_1.png',
+              //                 width: 76.08,
+              //                 height: 64,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
               InkWell(
                 //2nd one
                 onTap: () {
@@ -290,7 +290,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: '2. Detect ',
+                                      text: '1. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize:
@@ -426,7 +426,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: '3. Detect ',
+                                      text: '2. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize:
@@ -564,7 +564,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: '4. Detect ',
+                                      text: '3. Detect ',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
                                         fontSize:

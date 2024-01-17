@@ -96,7 +96,15 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
               ),
             Scaffold(
               appBar: AppBar(
-                title: const Text('Image to Text'),
+                title: const Text('Image to Text',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: 'Sora',
+                    fontWeight: FontWeight.w600,
+                    height: 1.26,
+                    color: Colors.white,
+                  ),
+                ),
                 backgroundColor: Color(0xff005aee), // Set the background color of the AppBar
                 leading: IconButton(
                   icon: Icon(Icons.arrow_back),

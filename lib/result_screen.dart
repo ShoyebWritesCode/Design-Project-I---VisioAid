@@ -53,7 +53,15 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Detected Text'),
+          title: const Text('Detected Text',
+            style: TextStyle(
+              fontSize: 18,
+              fontFamily: 'Sora',
+              fontWeight: FontWeight.w600,
+              height: 1.26,
+              color: Colors.white,
+            ),
+          ),
           backgroundColor: Color(0xff005aee),
         ),
         body: SingleChildScrollView(
@@ -65,7 +73,7 @@ class _ResultScreenState extends State<ResultScreen> {
               children: [
                 Text(
                   translatedText,
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 24, fontFamily: 'Sora'),
                 ),
                 SizedBox(height: 16.0), // Custom space between text and buttons
                 Row(

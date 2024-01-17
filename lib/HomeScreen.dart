@@ -861,7 +861,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color(0xff005aee),
         elevation: 0,
         title: const Text(
-          'Go Back',
+          'Object Detection',
           style: TextStyle(
             fontSize: 18,
             fontFamily: 'Sora',
@@ -875,15 +875,15 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            firststate
-                ? Expanded(
-                    child: Container(
-                      child: _image != null
-                          ? _objectModel.renderBoxesOnImage(_image!, objDetect)
-                          : CircularProgressIndicator(), // Show loading indicator while capturing the image
-                    ),
-                  )
-                : Text("Select the Camera to Begin Detections"),
+            //firststate
+                // ? Expanded(
+                //     child: Container(
+                //       child: _image != null
+                //           ? _objectModel.renderBoxesOnImage(_image!, objDetect)
+                //           : CircularProgressIndicator(), // Show loading indicator while capturing the image
+                //     ),
+                //   )
+                // : Text("Select the Camera to Begin Detections"),
             Center(
               child: Visibility(
                 visible: _imagePrediction != null,
