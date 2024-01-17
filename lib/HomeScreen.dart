@@ -875,15 +875,15 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //firststate
-                // ? Expanded(
-                //     child: Container(
-                //       child: _image != null
-                //           ? _objectModel.renderBoxesOnImage(_image!, objDetect)
-                //           : CircularProgressIndicator(), // Show loading indicator while capturing the image
-                //     ),
-                //   )
-                // : Text("Select the Camera to Begin Detections"),
+            firststate
+                ? Expanded(
+                    child: Container(
+                      child: _image != null
+                          ? _objectModel.renderBoxesOnImage(_image!, objDetect)
+                          : LinearProgressIndicator(), // Show loading indicator while capturing the image
+                    ),
+                  )
+                : Text("Select the Camera to Begin Detections"),
             Center(
               child: Visibility(
                 visible: _imagePrediction != null,
